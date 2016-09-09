@@ -2,12 +2,15 @@ moving_average <- function(x, n){
   filter(x, rep(1,n)) / n
 }
 
-date<-c(1,2,3,4,5,6,7,8,9,10)
-datas<-c(1,3,5,6,2,12,3,5,6,1)
-width<-3
+cs<-read.table("C:/Users/ito/Desktop/‰·Ž¼“x/export/No.3.csv",header = T,sep=",")
 
-result<-moving_average(datas,width)
+temp<-as.numeric(cs[1,])
+hum<-as.numeric(cs[2,])
 
-result
+width<-60
 
-plot(date,result,type="l")
+result.temp<-moving_average(temp,width)
+result.hum<-moving_average(hum,width)
+
+plot(1:length(temp),result.temp,type="l")
+plot(1:length(hum),result.hum,type="l")
