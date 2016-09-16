@@ -1,0 +1,3 @@
+#!/bin/bash
+OUTFILE=`echo findcontours.cpp | sed -e 's/\.cpp$//'`
+g++ $1 `pkg-config --cflags opencv` `pkg-config --libs opencv` -o $OUTFILE
